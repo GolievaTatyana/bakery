@@ -208,7 +208,7 @@
 </div>
 <div class="md-overlay"></div>
 
-<script src="<?php echo $templateUri ?>/js/jquery.js"></script><?php echo $templateUri ?>
+<script src="<?php echo $templateUri ?>/js/jquery.js"></script>
 <script src="<?php echo $templateUri ?>/js/bootstrap.min.js"></script>
 <script src="<?php echo $templateUri ?>/slick/slick/slick.min.js"></script>
 <script src="<?php echo $templateUri ?>/js/cufon-yui.js"></script>

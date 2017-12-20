@@ -11,8 +11,8 @@ jQuery(function($) {
 
     $(document).ready(function() {
         $('.banner-items').slick({
-            // autoplay: true,
-            // autoplaySpeed: 2000,
+            autoplay: true,
+            autoplaySpeed: 2000,
             dots: false,
             infinite: true,
             speed: 500,
