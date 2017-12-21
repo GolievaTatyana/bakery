@@ -3,19 +3,14 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
-        <ul class="footer-nav">
-          <li><a href="#">our menu</a></li>
-          <li><a href="#"> ~ </a></li>
-          <li><a href="#">gallery</a></li>
-          <li><a href="#"> ~ </a></li>
-          <li><a href="#">culture</a></li>
-          <li><a href="#header">Gustro</a></li>
-          <li><a href="#">events</a></li>
-          <li><a href="#"> ~ </a></li>
-          <li><a href="#">caterings</a></li>
-          <li><a href="#"> ~ </a></li>
-          <li><a href="#">visit us</a></li>
-        </ul>
+        <?php
+          wp_nav_menu( array(
+            'theme_location'  => 'footer_menu',
+            'container'       =>  false,
+            'menu_class'      => 'footer-nav',
+            )
+          );
+        ?>
       </div>
     </div>
   </div>

@@ -196,11 +196,6 @@ foreach ($pagesForSections as $page) {
               <div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5 hidden-xs">
                 <div id="cn_preview" class="cn_preview">
                   <?php foreach ($menu_3 as $key => $item): ?>
-                    <?php if ($key == 0): ?>
-                      <div class="cn_content text-center" style="top: 0px;">
-                    <?php else: ?>
-                      <div class="cn_content text-center">
-                    <?php endif; ?>
                     <?php
                     $args = array(
                       'post_parent' => $item->ID,
@@ -210,13 +205,16 @@ foreach ($pagesForSections as $page) {
                     $children = get_children( $args );
                     ?>
                     <?php foreach ($children as $child): ?>
-
+                      <?php if ($key == 0): ?>
+                      <div class="cn_content text-center" style="top: 0px;">
+                      <?php else: ?>
+                      <div class="cn_content text-center">
+                      <?php endif; ?>
                         <h2><?php echo $child->post_title; ?></h2>
                         <?php echo $child->post_excerpt; ?>
-
+                      </div>
                     <?php endforeach; ?>
                   <?php endforeach; ?>
-                </div>
               </div>
             </div>
           </div>
@@ -234,8 +232,8 @@ foreach ($pagesForSections as $page) {
           <?php foreach ($menu_4 as $key => $item): ?>
             <?php if ($key == 0): ?>
               <div class="row text-center capt">
-                <h2><?php echo $child->post_title; ?></h2>
-                <h4><?php echo $child->post_content; ?></h4>
+                <h2><?php echo $item->post_title; ?></h2>
+                <h4><?php echo $item->post_content; ?></h4>
               </div>
             <?php elseif($key !== 0 && $key == 1): ?>
             <div class="row parent">
@@ -253,10 +251,10 @@ foreach ($pagesForSections as $page) {
                   <?php foreach ($children as $child): ?>
                   <?php $meta_img_numb = get_post_meta( $child->ID, 'img_numb', true ); ?>
                     <div class="col-sm-4 col-md-12">
-                      <?php if ($counter = 0): ?>
-                        <div class="image first img-responsive center-block" style="background-image: url(<?php echo $templateUri ?>/img/pg4-img<?php echo $meta_img_numb ?>.png)"></div>
+                      <?php if ($counter == 0): ?>
+                        <div class="imag first img-responsive center-block" style="background-image: url(<?php echo $templateUri ?>/img/pg4-img<?php echo $meta_img_numb ?>.png)"></div>
                       <?php else: ?>
-                        <div class="image img-responsive center-block" style="background-image: url(<?php echo $templateUri ?>/img/pg4-img<?php echo $meta_img_numb ?>.png)"></div>
+                        <div class="imag img-responsive center-block" style="background-image: url(<?php echo $templateUri ?>/img/pg4-img<?php echo $meta_img_numb ?>.png)"></div>
                       <?php endif; ?>
                       <h3><?php echo $child->post_title; ?></h3>
                       <p><?php echo $child->post_content; ?></p>
@@ -282,7 +280,7 @@ foreach ($pagesForSections as $page) {
                     <?php $meta_modal = get_post_meta( $child->ID, 'modal', true ); ?>
                       <div class="recipe-item">
                         <div class="wrapper">
-                          <div class="recipe-img" style="background-image: url(<?php echo $templateUri ?>/img/pg4-img<?php echo $meta_img_n ?>.png)"></div>
+                          <div class="recipe-img" style="background-image: url(<?php echo $templateUri ?>/img/pg4-big-img<?php echo $meta_img_n ?>.png)"></div>
                           <div class="recipe-info">
                             <?php echo $child->post_excerpt; ?>
                           </div>

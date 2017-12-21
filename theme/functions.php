@@ -1,9 +1,16 @@
 <?php
 //register nav menu
-add_action( 'after_setup_theme', 'theme_register_nav_menu' );
-function theme_register_nav_menu() {
-	register_nav_menu( 'header', 'Header Menu' );
-}
+// add_action( 'after_setup_theme', 'theme_register_nav_menu' );
+// function theme_register_nav_menu() {
+// 	register_nav_menu( 'header', 'Header Menu' );
+// }
+
+add_action('after_setup_theme', function(){
+	register_nav_menus( array(
+		'header_menu' => 'Header Menu',
+		'footer_menu' => 'Footer Menu'
+	) );
+});
 
 // Default size of thumbnails
 if ( function_exists('add_theme_support') ) {

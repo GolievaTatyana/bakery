@@ -34,8 +34,7 @@
                 <div class="collapse navbar-collapse top-menu" id="bs-example-navbar-collapse-1">
                   <?php
                     wp_nav_menu( array(
-                      'theme_location'  => 'header',
-                      'menu'            => 'primary',
+                      'theme_location'  => 'header_menu',
                       'container'       =>  false,
                       'container_id'    => 'bs-example-navbar-collapse-1',
                       'menu_class'      => 'nav navbar-nav',
